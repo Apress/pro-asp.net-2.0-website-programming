@@ -1,0 +1,81 @@
+body 
+{
+	font-family: Arial, Verdana, Sans-Serif;
+	font-size:10pt;
+}
+
+td
+{
+	font-family: Arial, Verdana, Sans-Serif;
+	font-size:10pt;
+}
+
+.PageHeading
+{
+	font-size:20pt;
+	border: solid 1px black;
+	background-color:#000077;
+	height:40px;	
+	padding-left:10px;
+	color: White;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr='#000077',EndColorStr='#0000BB');	
+}
+
+.PageSubHeading
+{	
+	border: solid 1px black;
+	background-color:#EEAA00;
+	padding-left:10px;
+	padding-top:2px;
+	padding-bottom:2px;
+	color: Black;
+}
+
+.TagLine
+{
+	font-size:8pt;
+}
+
+.PortalMainTable
+{
+	padding-right:10px;
+	padding-left:10px;
+	padding-top:5px;
+	padding-bottom:5px;		
+}
+
+.WebPartZoneHeader
+{	
+	border: solid 1px black;
+	background-color:#DDDDDD;
+	font-size:12pt;
+	font-weight:bold;
+	color:Black;	
+}
+
+.WebPartTitle
+{
+	border-bottom:1px solid black;
+	background-color: #000077;
+	color:White;	
+	font-weight: bold;
+}
+
+.WebPartTitle a
+{
+	color:White;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+.WebPartTitle a:hover
+{
+	color:White;
+	font-weight:bold;
+	text-decoration:underline;
+}
+
+.WebPartContent
+{
+	background-color: #EEEEFF;
+}

@@ -1,0 +1,2 @@
+<asp:TextBox Runat="Server" BackColor="#E0E0E0" Font-Bold="True" BorderStyle="Solid" BorderColor="Red" BorderWidth="1px" ForeColor="#C00000" Font-Italic="False" />
+<asp:TextBox Runat="Server" SkinID="MultiLine" Height="75px" Width="200px" BackColor="#E0E0E0" Font-Bold="True" BorderStyle="Solid" BorderColor="Red" BorderWidth="1px" ForeColor="#C00000" Font-Italic="False" />

@@ -1,0 +1,13 @@
+<asp:WebPartZone SkinID="" Runat="server" PartChromeType="TitleAndBorder" DragHighlightColor="0, 0, 255">
+    <HeaderStyle CssClass="WebPartZoneHeader" />    
+    <PartTitleStyle CssClass="WebPartTitle"  />
+    <PartStyle CssClass="WebPartContent" CellSpacing=5  />
+    <PartChromeStyle BorderWidth="1px" BackColor="#CCCCCC"></PartChromeStyle>
+    <MenuPopupStyle BackColor="#FFFFFF"     BorderColor="#000000" 
+                    BorderStyle="Solid"     BorderWidth="1px"
+                    ShadowColor="#AAAAAA"   GridLines="Horizontal"
+					Font-Names="Tahoma"     Font-Size="9pt" />	
+	<MenuLabelStyle ForeColor="White" />	
+	<MenuVerbStyle ForeColor="Black" />
+	<MenuVerbHoverStyle ForeColor="Red" />	
+</asp:WebPartZone>

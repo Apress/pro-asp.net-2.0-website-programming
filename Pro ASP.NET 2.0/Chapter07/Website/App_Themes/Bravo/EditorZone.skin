@@ -1,0 +1,3 @@
+<asp:EditorZone runat="server" SkinID="" CssClass="EditorZone" HeaderText="Editor Zone" Width="100%" >
+    <HeaderStyle CssClass="WebPartZoneHeader" /> 
+</asp:EditorZone>

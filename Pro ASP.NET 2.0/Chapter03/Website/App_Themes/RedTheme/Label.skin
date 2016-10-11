@@ -1,0 +1,2 @@
+<asp:Label Runat="Server" BackColor="#FFC0C0" BorderStyle="Solid" BorderColor="Black" BorderWidth="1px" />
+<asp:Label Runat="Server" SkinID="Title" BackColor="#FFC0C0" Font-Bold="True" Font-Size="16pt" Font-Underline="True" BorderStyle="Dotted" BorderColor="Red" Text="The Red Theme!"/>

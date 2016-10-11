@@ -1,0 +1,212 @@
+Imports System
+Imports System.Configuration.ConfigurationManager
+Imports System.Data.SqlClient
+
+Partial Class FrontController
+    Inherits Web.UI.Page
+
+    '******************************************************************************
+    Private _PageID As Long
+    Private _Title As String
+    Private _MasterPage As String
+
+    '******************************************************************************
+    Private Function SqlString(ByVal text As String) As String
+        Return text.Replace("'", "''")
+    End Function
+
+    '******************************************************************************
+    Private Function AcquirePageInfo() As Boolean
+
+        Dim DbConn As SqlConnection
+        Dim SQL As String
+        Dim DbCmd As SqlCommand
+        Dim Dr As SqlDataReader
+
+        DbConn = New SqlConnection(ConnectionStrings("Database").ConnectionString)
+
+        'Create SQL command and setup parameters
+        SQL = "SELECT * FROM [Pages] WHERE [Location]=@Location;"
+        DbCmd = New SqlCommand(SQL, DbConn)
+        DbCmd.Parameters.Add("@Location", Data.SqlDbType.VarChar).Value = _
+          Context.Items("VirtualPage")
+
+        DbConn.Open()
+        Dr = DbCmd.ExecuteReader()
+        If Dr.Read Then
+            _PageID = CLng(Dr("PageID"))
+            _Title = CStr(Dr("Title"))
+            _MasterPage = CStr(Dr("MasterPage"))
+            AcquirePageInfo = True
+        Else
+            AcquirePageInfo = False
+        End If        
+        DbConn.Close()
+
+    End Function
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+    End Sub
+        
+    '******************************************************************************
+    Protected Sub Page_PreInit(ByVal sender As Object, ByVal e As EventArgs) _
+      Handles Me.PreInit
+
+        'Acquire the page info and setup the master page
+        If AcquirePageInfo() Then
+            Me.MasterPageFile = "~/ContentManagement/Master Pages/" & _MasterPage
+            Me.Title = _Title
+        Else
+            'If the page is not found in the database, send a 404 error
+            Response.StatusCode = 404
+            Response.End()
+        End If
+
+    End Sub
+
+    '******************************************************************************
+    Protected Sub Page_PreLoad(ByVal sender As Object, ByVal e As EventArgs) _
+      Handles Me.PreLoad        
+        LoadPageContent()
+    End Sub
+
+    '******************************************************************************
+    Private Sub SetupBreakLiteral(ByVal lit As Literal, ByVal Count As Integer)        
+        For index As Integer = 1 To Count
+            lit.Text &= "<BR>"
+        Next
+    End Sub
+
+    '******************************************************************************
+    Public Sub LoadPageContent()
+
+        Dim ActiveCPH As ContentPlaceHolder = _
+          CType(Me.Master.FindControl("Area1"), ContentPlaceHolder)
+        Dim TempCPH As ContentPlaceHolder
+        Dim ActiveCPHIndex As Integer = 1
+
+        Dim DbConn As SqlConnection
+        Dim SQL As String
+        Dim DbCmd As SqlCommand
+        Dim Dr As SqlDataReader
+
+        Dim ContentType As String
+        Dim ContentArea As Integer
+        Dim ContentParams As String
+        Dim ContentBreaksAfter As Integer
+        Dim Params As String()
+
+        DbConn = New SqlConnection(ConnectionStrings("Database").ConnectionString)
+
+        'Create SQL command and setup parameters
+        SQL = "SELECT * FROM [Content] WHERE [PageID]=@PageID " & _
+              "ORDER BY [Area],[Position];"
+        DbCmd = New SqlCommand(SQL, DbConn)
+        DbCmd.Parameters.Add("@PageID", Data.SqlDbType.Int).Value = _PageID
+
+        DbConn.Open()
+        Dr = DbCmd.ExecuteReader()
+
+        While Dr.Read
+
+            'Store data reader values in strongly typed variables
+            ContentType = CStr(Dr("Type"))
+            ContentArea = CInt(Dr("Area"))
+            ContentParams = CStr(Dr("Params"))
+            ContentBreaksAfter = CInt(Dr("BreaksAfter"))
+
+            'Determine if new ContentPlaceHolder needs to be located
+            If ContentArea <> ActiveCPHIndex Then
+                TempCPH = CType(Master.FindControl("Area" & ContentArea), _
+                             ContentPlaceHolder)
+                If Not ActiveCPH Is Nothing Then
+                    ActiveCPH = TempCPH
+                End If
+                ActiveCPHIndex += 1
+            End If
+
+            If ActiveCPH Is Nothing Then
+                Throw New NullReferenceException("Template does not contain a " & _
+                                                 "ContentPlaceHolder named Area1")
+            End If
+
+            Params = Split(ContentParams, "|")
+
+            Select Case UCase(ContentType)
+
+                Case "TITLE"
+                    Dim lbl As New Label
+                    lbl.Font.Bold = True
+                    lbl.Font.Underline = True
+                    lbl.Font.Size = WebControls.FontUnit.Point(12)
+                    If Params.Length > 0 Then lbl.Text = Params(0)
+                    ActiveCPH.Controls.Add(lbl)
+                    If ContentBreaksAfter > 0 Then
+                        Dim lit As New Literal
+                        SetupBreakLiteral(lit, ContentBreaksAfter)
+                        ActiveCPH.Controls.Add(lit)
+                    End If
+
+                Case "PARAGRAPH"
+                    Dim lbl As New Label()
+                    If Params.Length > 0 Then lbl.Text = Params(0)
+                    Dim lit As New Literal
+                    SetupBreakLiteral(lit, ContentBreaksAfter)
+                    ActiveCPH.Controls.Add(lit)
+
+                Case "HYPERLINK"
+                    Dim lnk As New HyperLink()
+                    If Params.Length > 0 Then lnk.Text = Params(0)
+                    If Params.Length > 1 Then lnk.NavigateUrl = Params(1)
+                    ActiveCPH.Controls.Add(lnk)
+                    If ContentBreaksAfter > 0 Then
+                        Dim lit As New Literal
+                        SetupBreakLiteral(lit, ContentBreaksAfter)
+                        ActiveCPH.Controls.Add(lit)
+                    End If
+
+                Case "IMAGE"
+                    Dim img As New Image()
+                    If Params.Length > 0 Then img.ImageUrl = Params(0)
+                    ActiveCPH.Controls.Add(img)
+                    If ContentBreaksAfter > 0 Then
+                        Dim lit As New Literal
+                        SetupBreakLiteral(lit, ContentBreaksAfter)
+                        ActiveCPH.Controls.Add(lit)
+                    End If
+
+                Case "LINKIMAGE"
+                    Dim hlnk As New HyperLink()
+                    If Params.Length > 0 Then hlnk.ImageUrl = Params(0)
+                    If Params.Length > 1 Then hlnk.NavigateUrl = Params(1)
+                    ActiveCPH.Controls.Add(hlnk)
+                    If ContentBreaksAfter > 0 Then
+                        Dim lit As New Literal
+                        SetupBreakLiteral(lit, ContentBreaksAfter)
+                        ActiveCPH.Controls.Add(lit)
+                    End If
+
+                Case "USERCONTROL"
+                    If Params.Length > 0 Then
+                        Dim ctrl As UserControl = CType(LoadControl( _
+                          "~/ContentManagement/UserControls/" & Params(0)), _
+                          UserControl)
+                        ActiveCPH.Controls.Add(ctrl)
+                        If ContentBreaksAfter > 0 Then
+                            Dim lit As New Literal
+                            SetupBreakLiteral(lit, ContentBreaksAfter)
+                            ActiveCPH.Controls.Add(lit)
+                        End If
+                    End If
+
+            End Select            
+
+        End While
+
+        Dr.Close()
+        DbConn.Close()        
+
+    End Sub
+
+End Class

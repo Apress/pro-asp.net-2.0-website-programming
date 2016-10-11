@@ -1,0 +1,41 @@
+<%@ Master Language="VB" CodeFile="Bravo.master.vb" Inherits="Bravo" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="PageHeading" runat="server">
+    <title>Bravo Company</title>
+</head>
+<body topmargin=0 bottommargin=0 leftmargin=0 rightmargin=0>
+    <form id="formMain" runat="server">
+        <table style="height:100%; width:100%;" border=0 cellpadding=0 cellspacing=0>
+            <tr>
+                <td class="PageHeading">Bravo Corp Employee Website</td>
+            </tr>
+            <tr>
+                <td class="PageSubHeading">
+                    <table style="width:100%;" cellpadding=0 cellspacing=0>
+                        <tr>
+                            <td align=left class="TagLine">We make things and then sell them to people!</td>
+                            <td align=right class="TagLine">
+                                <asp:contentplaceholder id="QuickLinks" runat="server">                                    
+                                </asp:contentplaceholder>                            
+                            </td>
+                        </tr>
+                    </table>
+                </td>                
+            </tr>
+            <tr>
+                <td>
+                    <table cellpadding=5 width=100% height=100%>
+                        <tr>
+                            <td>
+                                <asp:contentplaceholder id="MainContent" runat="server">
+                                </asp:contentplaceholder>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

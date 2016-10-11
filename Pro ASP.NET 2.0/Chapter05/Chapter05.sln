@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "C:\...\Website\", "Website\", "{3B97B629-34B8-4D99-A670-D26FDF1ABCCA}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/Website"
+		Debug.AspNetCompiler.PhysicalPath = "Website\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Website\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "true"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Website"
+		Release.AspNetCompiler.PhysicalPath = "Website\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Website\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "true"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "2515"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "C:\...\ManualFormsAuthWebsite\", "ManualFormsAuthWebsite\", "{6C0ECC0A-86D3-4DAE-A16F-34A3B94A739C}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/ManualFormsAuthWebsite"
+		Debug.AspNetCompiler.PhysicalPath = "ManualFormsAuthWebsite\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\ManualFormsAuthWebsite\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "true"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/ManualFormsAuthWebsite"
+		Release.AspNetCompiler.PhysicalPath = "ManualFormsAuthWebsite\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\ManualFormsAuthWebsite\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "true"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "4586"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed platforms = Debug|Mixed platforms
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B97B629-34B8-4D99-A670-D26FDF1ABCCA}.Debug|.NET.ActiveCfg = Debug|.NET
+		{3B97B629-34B8-4D99-A670-D26FDF1ABCCA}.Debug|.NET.Build.0 = Debug|.NET
+		{3B97B629-34B8-4D99-A670-D26FDF1ABCCA}.Debug|Any CPU.ActiveCfg = Debug|.NET
+		{3B97B629-34B8-4D99-A670-D26FDF1ABCCA}.Debug|Any CPU.Build.0 = Debug|.NET
+		{3B97B629-34B8-4D99-A670-D26FDF1ABCCA}.Debug|Mixed platforms.ActiveCfg = Debug|.NET
+		{3B97B629-34B8-4D99-A670-D26FDF1ABCCA}.Debug|Mixed platforms.Build.0 = Debug|.NET
+		{6C0ECC0A-86D3-4DAE-A16F-34A3B94A739C}.Debug|.NET.ActiveCfg = Debug|.NET
+		{6C0ECC0A-86D3-4DAE-A16F-34A3B94A739C}.Debug|.NET.Build.0 = Debug|.NET
+		{6C0ECC0A-86D3-4DAE-A16F-34A3B94A739C}.Debug|Any CPU.ActiveCfg = Debug|.NET
+		{6C0ECC0A-86D3-4DAE-A16F-34A3B94A739C}.Debug|Mixed platforms.ActiveCfg = Debug|.NET
+		{6C0ECC0A-86D3-4DAE-A16F-34A3B94A739C}.Debug|Mixed platforms.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

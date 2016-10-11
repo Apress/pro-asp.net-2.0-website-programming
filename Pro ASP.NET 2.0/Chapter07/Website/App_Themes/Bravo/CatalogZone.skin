@@ -1,0 +1,6 @@
+<asp:CatalogZone runat="server" SkinID="" CssClass="CatalogZone" VerbButtonType="Button" Width="100%" >
+    <HeaderStyle CssClass="WebPartZoneHeader" />    
+    <PartTitleStyle CssClass="WebPartTitle"  />
+    <PartStyle CssClass="WebPartContent" CellSpacing=5  />
+    <PartChromeStyle BorderWidth="1px" BackColor="#CCCCCC"></PartChromeStyle>
+</asp:CatalogZone>

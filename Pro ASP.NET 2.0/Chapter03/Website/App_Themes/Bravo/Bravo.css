@@ -1,0 +1,43 @@
+﻿a
+{
+	color: Black;
+}
+
+body 
+{
+	font-family: Arial, Verdana, Sans-Serif;
+	font-size:10pt;
+}
+
+td
+{
+	font-family: Arial, Verdana, Sans-Serif;
+	font-size:10pt;
+}
+
+.PageHeading
+{
+	font-size:20pt;
+	border: solid 1px black;
+	background-color:#000077;
+	height:40px;	
+	padding-left:10px;
+	color: White;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr='#000077',EndColorStr='#0000BB');	
+}
+
+.PageSubHeading
+{	
+	border: solid 1px black;
+	background-color:#EEAA00;
+	padding-left:10px;
+	padding-top:2px;
+	padding-bottom:2px;
+	color: Black;
+}
+
+.TagLine
+{
+	font-weight: bold;
+	font-size:8pt;
+}

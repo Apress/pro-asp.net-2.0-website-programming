@@ -1,0 +1,84 @@
+<%@ Master Language="VB" CodeFile="Page.master.vb" AutoEventWireup="false" Inherits="Page_master" %>
+<%@ Register Src="Misc/Menu.ascx" TagName="Menu" TagPrefix="uc1" %>
+<html>
+    <head runat="server" id="pageHead">       
+        <title></title> 
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <link href="~/Misc/default.css" rel="stylesheet" type="text/css">
+    </head>
+<body>
+<form runat=server id="Main" style="height:100%">
+<table align="center" border="0" height="100%" cellpadding="0" cellspacing="0">
+	<tr>
+		<td>
+			<table width="780" border="0" align="center" cellpadding="0" cellspacing="0">
+		        <tr>
+			        <td><asp:Image runat="server" ID="imgMainHeader" ImageUrl="~/images/header.main.jpg" AlternateText="PRO ASP.NET 2.0 Website Programming" width="780" height="136" /></td>
+		        </tr>		        
+		        <tr>
+			        <td style="background-image: url(<%=RootPath%>images/button.background.jpg); height:46;"><a href="<%=RootPath%>Default.aspx"><asp:Image runat="server" id="imgSampleCode" ImageUrl="~/images/button.samplecode.gif" AlternateText="Sample Code" width="136" height="46" /></a><asp:Image runat="server" id="imgSep01" ImageUrl="~/images/button.seperator.jpg" width="2" height="46" /><a href="<%=RootPath%>Misc/Links.aspx"><asp:Image runat="server" id="imgLinks" ImageUrl="~/images/button.links.gif" AlternateText="Links" width="92" height="46" /></a><asp:Image runat="server" id="imgSep02" ImageUrl="~/images/button.seperator.jpg" width="2" height="46" /><a href="<%=RootPath%>Misc/AboutAuthor.aspx"><asp:Image runat="server" id="imgAboutAuthor" ImageUrl="~/images/button.aboutauthor.gif" AlternateText="About the Author" width="160" height="46" /></a><asp:Image runat="server" id="imgSep03" ImageUrl="~/images/button.seperator.jpg" width="2" height="46" /><a href="http://www.apress.com/"><asp:Image runat="server" id="imgApress" ImageUrl="~/images/button.apress.gif" AlternateText="Apress.com" width="127" height="46" /></a></td>
+		        </tr>
+		        <tr>
+			        <td><asp:Image runat="server" id="imgSep04" ImageUrl="~/images/header.body.splitter.gif" width="780" height="7" /></td>
+		        </tr>
+	        </table>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" height="100%" style="background-color: #ffffff;">
+			<table height="100%" border="0" align="center" cellpadding="0" cellspacing="0" style="background-color: #ffffff;">
+		        <tr valign="top">
+			        <td width="149">
+			            <!-- Content -->
+				        <uc1:Menu ID="Menu1" runat="server" />
+				        <!-- End Menu Content -->
+			        </td>
+			        <td style="width:1px; background-image:url(<%=RootPath%>images/seperator.horiz.gif);"><asp:Image runat="server" id="imgSep05" ImageUrl="~/images/spacer.gif" width="1" height="1" /></td>
+			        <td style="width: 630px;">
+				        <table width="630"  border="0" cellspacing="0" cellpadding="0">
+	            	        <tr>
+	            		        <td style="width:630px; background-image:url(<%=RootPath%>images/body.heading.background.jpg);"><asp:Image runat="server" ID="imgBullet" ImageUrl="~/images/body.heading.bullet.jpg" width="28" height="30" /><asp:Image Runat="server" ID="imgMainContentTitle" ImageUrl="~/images/body.heading.title.gif" width="450px" height="30" /></td>
+	           		        </tr>
+	            	        <tr valign="top">
+	            		        <td>
+	            			        <table border="0" cellpadding="0" cellspacing="15">
+	                        	        <tr>
+	                        		        <td>
+	                        		        <!-- Begin Page Content -->
+	                            		    <asp:ContentPlaceHolder Runat="server" ID="ContentMain" />
+	                        		        <!-- End Page Content -->
+	                        		        </td>
+	                       		        </tr>
+                        	        </table>
+	            		        </td>
+	           		        </tr>
+	            	        <tr>
+	            		        <td>&nbsp;</td>
+	           		        </tr>
+	           	        </table>
+			        </td>
+		        </tr>
+	        </table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+	        <table width="780" border="0" align="center" cellpadding="0" cellspacing="0">
+		        <tr>
+			        <td style="height:29px; background-image:url(<%=RootPath%>images/footer.dark.gif);" align="center" class="text3">			
+			            <a href="<%=RootPath%>Default.aspx" class="link1">Sample Code</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+			            <a href="<%=RootPath%>Misc/Links.aspx" class="link1">Links</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+			            <a href="<%=RootPath%>Misc/AboutAuthor.aspx" class="link1">About the Author</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+				        <a href="http://www.Apress.com/" class="link1">www.Apress.com</a>
+					</td>
+		        </tr>
+		        <tr>
+			        <td style="height:50; background-image:url(<%=RootPath%>images/footer.light.gif);" align="center" class="text1">Copyright (c) 2005 <a href="http://www.DamonArmstrong.com">DamonArmstrong.com</a>. All rights reserved.</td>
+		        </tr>
+	        </table>
+		</td>
+	</tr>
+</table>
+</form>
+</body>
+</html>

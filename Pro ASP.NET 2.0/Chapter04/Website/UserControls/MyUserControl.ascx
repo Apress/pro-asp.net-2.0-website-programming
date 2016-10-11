@@ -1,0 +1,3 @@
+<%@ Control Language="VB" %>
+<div style="border:1px solid black; width:150px;"><div style="width:100%; padding:2px; font-size: 10pt; background:DarkBlue; color:White; font-family:Arial; font-weight:bold;">My User Control!</div>
+    <div style="width:100%; padding:2px; font-size: 10pt; background:WhiteSmoke; color:Black; font-family:Arial;">Notice how the user control content is displayed in design time!</div></div>

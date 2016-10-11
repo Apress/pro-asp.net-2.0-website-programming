@@ -1,0 +1,66 @@
+body {
+	background-color: #8899AA;
+	margin: 0px;
+	padding: 0px;
+}
+
+body, th, td {
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #666666;
+}
+
+.align-justify {
+	text-align: justify;
+}
+
+.text1 {
+	font-size: 10px;
+}
+
+.text2 {
+	color: #414141;
+}
+
+.text3 {
+	color: #A0B0CB;
+}
+
+a {
+	color: #337ABA;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a.link1 {
+	color: #FFFFFF;
+}
+
+.PageHeading
+{
+	font-size:20pt;
+	border: solid 1px black;
+	background-color:#000077;
+	height:40px;	
+	padding-left:10px;
+	color: White;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr='#000077',EndColorStr='#0000BB');	
+}
+
+.PageSubHeading
+{	
+	border: solid 1px black;
+	background-color:#EEAA00;
+	padding-left:10px;
+	padding-top:2px;
+	padding-bottom:2px;
+	color: Black;
+}
+
+.TagLine
+{
+	font-weight: bold;
+	font-size:8pt;
+}

@@ -1,0 +1,3 @@
+<asp:ConnectionsZone runat="server" SkinID="" CssClass="CatalogZone" VerbButtonType="Button" Width="100%" >
+    <HeaderStyle CssClass="WebPartZoneHeader" /> 
+</asp:ConnectionsZone>

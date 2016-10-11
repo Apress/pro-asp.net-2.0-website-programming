@@ -1,0 +1,72 @@
+<%@ Master Language="VB" CodeFile="TemplateC.master.vb" Inherits="TemplateC" %>
+<%@ Register TagPrefix="cc" Namespace="Handlers" Assembly="Handlers" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>Untitled Page</title>
+    <style>
+        body{
+            font-family:arial;
+            font-size:10pt;
+        }
+        .ContentAreaHeading{
+            background-color: darkblue;
+            color: white;            
+            font-weight:bold;
+            border-bottom: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <cc:ActionlessForm id="form1" runat="server">      
+        <strong><span style="font-size: 16pt; text-decoration: underline">Content Management Template C</span></strong><br /><br />
+
+        <table cellpadding=3 cellspacing=0 style="width:100%;">
+            <tr>
+                <!-- Content Area Cell -->
+                <td style="width:50%;" valign=top>
+                    <table cellpadding=3 cellspacing=0 style="width:100%; border: 1px solid black;">
+                        <tr>
+                            <td class="ContentAreaHeading">
+                                Content Area #1
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:ContentPlaceHolder id=Area1 runat=server />
+                            </td>
+                        </tr>
+                    </table>   
+                </td>
+                <!-- Content Area Cell -->
+                <td style="width:50%;" valign=top>
+                    <table cellpadding=3 cellspacing=0 style="width:100%; border: 1px solid black;">
+                        <tr>
+                            <td class="ContentAreaHeading">
+                                Content Area #2
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:ContentPlaceHolder id=Area2 runat=server />
+                            </td>
+                        </tr>
+                    </table>   
+                </td>
+            </tr>
+        </table>        
+        <table cellpadding=3 cellspacing=0 style="width:100%; border: 1px solid black;">
+            <tr>
+                <td class="ContentAreaHeading">
+                    Content Area #3
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:ContentPlaceHolder id=Area3 runat=server />
+                </td>
+            </tr>
+        </table>                 
+    </cc:ActionlessForm>
+</body>
+</html>
